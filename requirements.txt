@@ -1,0 +1,6 @@
+pandas==2.2.3
+sdv==1.34.2
+sdmetrics
+matplotlib
+numpy
+minieda @ git+https://github.com/dbolotov/minieda.git
