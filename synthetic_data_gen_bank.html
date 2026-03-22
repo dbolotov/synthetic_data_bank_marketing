@@ -7517,7 +7517,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Synthetic-Data-Generation-Workflow---Bank-Marketing-Data">Synthetic Data Generation Workflow - Bank Marketing Data<a class="anchor-link" href="#Synthetic-Data-Generation-Workflow---Bank-Marketing-Data">¶</a></h1><p>Synthetic data is artificially generated data that mimics the statistical properties of a real dataset (e.g. column structure, distributions, relationships between variables). It is useful for sharing data safely, augmenting datasets, and testing pipelines without exposing sensitive information.</p>
+<h1 id="Synthetic-Data-Generation-Workflow---Bank-Marketing-Data">Synthetic Data Generation Workflow - Bank Marketing Data<a class="anchor-link" href="#Synthetic-Data-Generation-Workflow---Bank-Marketing-Data">¶</a></h1><hr/>
+<p>Synthetic data is artificially generated data that mimics the statistical properties of a real dataset (e.g. column structure, distributions, relationships between variables). It is useful for sharing data safely, augmenting datasets, and testing pipelines without exposing sensitive information.</p>
 <p>This notebook shows a synthetic data generation workflow using the <a href="https://sdv.dev/">Synthetic Data Vault (SDV)</a> library and a marketing dataset.</p>
 <p>The dataset represents a bank marketing campaign from <a href="https://archive.ics.uci.edu/dataset/222/bank+marketing">UCI Machine Learning Repository</a>, with 4,119 records, 21 variables, and mixed numeric and categorical types.</p>
 <p>The goal is to generate a synthetic version of the dataset that preserves the statistical properties of the original, including column distributions, inter-variable correlations, and category adherence.</p>
@@ -7541,7 +7542,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Data-Description">Data Description<a class="anchor-link" href="#Data-Description">¶</a></h1><p>The dataset comes from direct marketing campaigns run by a Portuguese bank between 2008 and 2013. Each record represents one client contact (by phone), with the target variable <code>y</code> indicating whether the client subscribed to a term deposit.</p>
+<h1 id="Data-Description">Data Description<a class="anchor-link" href="#Data-Description">¶</a></h1><hr/>
+<p>The dataset comes from direct marketing campaigns run by a Portuguese bank between 2008 and 2013. Each record represents one client contact (by phone), with the target variable <code>y</code> indicating whether the client subscribed to a term deposit.</p>
 <p>Variables fall into three groups:</p>
 <ul>
 <li><strong>Client attributes</strong>: age, job, marital status, education, and whether the client has credit in default, a housing loan, or a personal loan</li>
@@ -7560,7 +7562,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Data-Loading">Data Loading<a class="anchor-link" href="#Data-Loading">¶</a></h2><p>We define a schema with data types for each column and then load the data.</p>
+<h2 id="Data-Loading">Data Loading<a class="anchor-link" href="#Data-Loading">¶</a></h2><hr/>
+<p>We define a schema with data types for each column and then load the data.</p>
 </div>
 </div>
 </div>
@@ -8150,7 +8153,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Synthetic-Data-Generation">Synthetic Data Generation<a class="anchor-link" href="#Synthetic-Data-Generation">¶</a></h2><p>We use <code>CopulaGANSynthesizer</code> as the primary synthesizer. It combines Gaussian copula marginal fitting with CTGAN-based joint distribution learning, which produces better fidelity on both column distributions and categorical relationships than <code>GaussianCopulaSynthesizer</code> alone (Column Shapes 0.88 vs 0.74, categorical pair trends 0.67 vs 0.43).</p>
+<h2 id="Synthetic-Data-Generation">Synthetic Data Generation<a class="anchor-link" href="#Synthetic-Data-Generation">¶</a></h2><hr/>
+<p>We use <code>CopulaGANSynthesizer</code> as the primary synthesizer. It combines Gaussian copula marginal fitting with CTGAN-based joint distribution learning, which produces better fidelity on both column distributions and categorical relationships than <code>GaussianCopulaSynthesizer</code> alone (Column Shapes 0.88 vs 0.74, categorical pair trends 0.67 vs 0.43).</p>
 <p>Three other synthesizers were evaluated (code and results not shown in this notebook):</p>
 <ul>
 <li><code>GaussianCopulaSynthesizer</code> produced good validity and privacy scores but systematically miscalibrated heavily imbalanced categorical columns, inflating the <code>unknown</code> category in <code>default</code> and <code>marital</code> to become the dominant value in the synthetic data.</li>
@@ -8875,7 +8879,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Synthetic-Data-Validation">Synthetic Data Validation<a class="anchor-link" href="#Synthetic-Data-Validation">¶</a></h2><p>In this section, we use several methods to check how the synthetic data compares to the original dataset.</p>
+<h2 id="Synthetic-Data-Validation">Synthetic Data Validation<a class="anchor-link" href="#Synthetic-Data-Validation">¶</a></h2><hr/>
+<p>In this section, we use several methods to check how the synthetic data compares to the original dataset.</p>
 </div>
 </div>
 </div>
@@ -9152,7 +9157,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Correlation-Structure">Correlation Structure<a class="anchor-link" href="#Correlation-Structure">¶</a></h2><p>Beyond individual column distributions, a synthetic dataset should preserve relationships between variables. We first compare numeric correlation matrices visually using heatmaps. Then we use SDV's <code>evaluate_quality</code> function to compute Column Pair Trends scores.</p>
+<h2 id="Correlation-Structure">Correlation Structure<a class="anchor-link" href="#Correlation-Structure">¶</a></h2><hr/>
+<p>Beyond individual column distributions, a synthetic dataset should preserve relationships between variables. We first compare numeric correlation matrices visually using heatmaps. Then we use SDV's <code>evaluate_quality</code> function to compute Column Pair Trends scores.</p>
 <p>Column Pair Trends evaluates two types of relationships:</p>
 <ul>
 <li><strong>Numeric-numeric pairs</strong> (Correlation Similarity): how well linear correlations between numeric columns are reproduced</li>
@@ -9619,7 +9625,8 @@ Categorical/Mixed Pairs Mean Score: 0.644
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="SDV-Quality-Scores">SDV Quality Scores<a class="anchor-link" href="#SDV-Quality-Scores">¶</a></h3><p>SDV's <code>evaluate_quality</code> function scores each column individually on how well its distribution was reproduced ('Column Shapes') and each column pair on how well their relationship was preserved ('Column Pair Trends').</p>
+<h3 id="SDV-Quality-Scores">SDV Quality Scores<a class="anchor-link" href="#SDV-Quality-Scores">¶</a></h3><hr/>
+<p>SDV's <code>evaluate_quality</code> function scores each column individually on how well its distribution was reproduced ('Column Shapes') and each column pair on how well their relationship was preserved ('Column Pair Trends').</p>
 <p>We already examined the pair trends above; here we look at the per-column scores.</p>
 </div>
 </div>
@@ -9809,7 +9816,8 @@ Categorical/Mixed Pairs Mean Score: 0.644
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Privacy-and-Memorization-Checks">Privacy and Memorization Checks<a class="anchor-link" href="#Privacy-and-Memorization-Checks">¶</a></h2><p>We run two checks to confirm that the synthetic data doesn't reproduce records from the training data.</p>
+<h2 id="Privacy-and-Memorization-Checks">Privacy and Memorization Checks<a class="anchor-link" href="#Privacy-and-Memorization-Checks">¶</a></h2><hr/>
+<p>We run two checks to confirm that the synthetic data doesn't reproduce records from the training data.</p>
 <ul>
 <li><strong>New Row Score</strong> (<code>NewRowSynthesis</code>): checks whether any synthetic rows are exact copies of real rows. A score of 1.0 means every synthetic row is new.</li>
 <li><strong>Nearest-Neighbor Privacy Score</strong> (<code>DCRBaselineProtection</code>): measures how close synthetic rows are to their nearest real neighbors, relative to a random data baseline. A score of 1.0 means the synthetic data is no closer to the real data than random noise (the best possible privacy). A score near 0.5 is typical for a well-trained model.</li>
@@ -9880,7 +9888,8 @@ Random baseline median DCR to real data: 0.354
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="SDV-Validity-Checks">SDV Validity Checks<a class="anchor-link" href="#SDV-Validity-Checks">¶</a></h3><p>To conclude this section, we run SDV's built-in <a href="https://docs.sdv.dev/sdmetrics/data-metrics/diagnostic/diagnostic-report">diagnostic report</a>, which captures basic diagnostic measurements across the entire dataset, reporting areas that may be problematic. It checks:</p>
+<h3 id="SDV-Validity-Checks">SDV Validity Checks<a class="anchor-link" href="#SDV-Validity-Checks">¶</a></h3><hr/>
+<p>To conclude this section, we run SDV's built-in <a href="https://docs.sdv.dev/sdmetrics/data-metrics/diagnostic/diagnostic-report">diagnostic report</a>, which captures basic diagnostic measurements across the entire dataset, reporting areas that may be problematic. It checks:</p>
 <ul>
 <li><strong>Data Structure</strong>: the synthetic table has the same column names as the real data.</li>
 <li><strong>Data Validity</strong>: synthetic values respect the original data's column types and value ranges.</li>
@@ -9937,7 +9946,8 @@ Overall Score (Average): 100.0%
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Synthetic-Data-Quality-Summary">Synthetic Data Quality Summary<a class="anchor-link" href="#Synthetic-Data-Quality-Summary">¶</a></h3><p>The table below summarizes the key validation metrics computed in this section.</p>
+<h3 id="Synthetic-Data-Quality-Summary">Synthetic Data Quality Summary<a class="anchor-link" href="#Synthetic-Data-Quality-Summary">¶</a></h3><hr/>
+<p>The table below summarizes the key validation metrics computed in this section.</p>
 <ul>
 <li>Data Validity and Data Structure should score close to 100%.</li>
 <li>Column Shapes, Column Pair Trends, and the privacy metrics don't have a fixed target; however, higher is better for quality scores, while a Nearest-Neighbor Privacy Score near 0.5 indicates a good balance between utility and privacy.</li>
@@ -10034,7 +10044,8 @@ Overall Score (Average): 100.0%
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Save-Outputs">Save Outputs<a class="anchor-link" href="#Save-Outputs">¶</a></h2><p>For reproducibility, we save the following items:</p>
+<h2 id="Save-Outputs">Save Outputs<a class="anchor-link" href="#Save-Outputs">¶</a></h2><hr/>
+<p>For reproducibility, we save the following items:</p>
 <ul>
 <li>The synthetic dataset</li>
 <li>Fitted synthesizer</li>
@@ -10074,7 +10085,8 @@ Overall Score (Average): 100.0%
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Conditional-Generation">Conditional Generation<a class="anchor-link" href="#Conditional-Generation">¶</a></h2><p>Beyond generating a full synthetic dataset, SDV supports conditional generation: we sample rows that match specified demographic or behavioral criteria while drawing the remaining columns from the learned distribution. This can be useful for generating targeted test datasets, augmenting underrepresented segments, or simulating specific customer profiles.</p>
+<h2 id="Conditional-Generation">Conditional Generation<a class="anchor-link" href="#Conditional-Generation">¶</a></h2><hr/>
+<p>Beyond generating a full synthetic dataset, SDV supports conditional generation: we sample rows that match specified demographic or behavioral criteria while drawing the remaining columns from the learned distribution. This can be useful for generating targeted test datasets, augmenting underrepresented segments, or simulating specific customer profiles.</p>
 <p>Conditional generation respects statistical patterns learned from the data but does not enforce logical constraints between columns. In practice the model learns these relationships reasonably well. For example,  conditioning on <code>job='retired'</code> produces a mean age of 39 with plausible older clients represented. However, implausible combinations can still appear, such as retired clients in their late 20s. SDV's constraint framework can address this for cases where hard rules are required, but is outside the scope of this notebook.</p>
 </div>
 </div>

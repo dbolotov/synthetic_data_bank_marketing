@@ -1,5 +1,7 @@
 # Synthetic Data Generation — Bank Marketing Dataset
 
+View the rendered notebook [here (using nbviewer)]
+
 Synthetic data generation workflow in a Jupyter notebook, using [SDV](https://sdv.dev/) on the [UCI Bank Marketing dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing).
 
 Generates synthetic tabular data that preserves the statistical properties of the original dataset and runs validation checks.
