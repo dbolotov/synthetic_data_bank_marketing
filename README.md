@@ -1,10 +1,22 @@
 # Synthetic Data Generation — Bank Marketing Dataset
 
-**View the rendered notebook [here](https://dbolotov.github.io/projects/synthetic_data_gen_bank.html)**
+**View the rendered notebook [here](https://dbolotov.github.io/projects/synthetic_data_gen_bank.html).**
 
-Synthetic data generation workflow in a Jupyter notebook, using [SDV](https://sdv.dev/) on the [Bank Marketing Dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing) from UCI machine learning repository.
+## About
 
-Generates synthetic tabular data that preserves the statistical properties of the original dataset and runs validation checks.
+A Jupyter notebook workflow for generating synthetic data, using [Synthetic Data Vault](https://sdv.dev/) on the [Bank Marketing Dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing) from UCI machine learning repository.
+
+Generates tabular data that preserves the statistical properties of the original dataset and runs validation checks.
+
+## Setup
+```bash
+pip install -r requirements.txt
+```
+Then open `synthetic_data_gen_bank.ipynb` in Jupyter.
+
+## Data
+
+UCI Bank Marketing dataset (10% subset, 4,119 rows). Original source: [Moro et al., 2014](https://archive.ics.uci.edu/dataset/222/bank+marketing). Licensed under CC BY 4.0.
 
 ## Model
 
@@ -22,16 +34,6 @@ Generates synthetic tabular data that preserves the statistical properties of th
 | New Row Score | 1.00 |
 | Nearest-Neighbor Privacy | 0.35 |
 
-## Setup
-```bash
-pip install -r requirements.txt
-```
-
-Then open `synthetic_data_gen_bank.ipynb` in Jupyter.
-
-## Data
-
-UCI Bank Marketing dataset (10% subset, 4,119 rows). Original source: [Moro et al., 2014](https://archive.ics.uci.edu/dataset/222/bank+marketing). Licensed under CC BY 4.0.
 
 ## Outputs
 
